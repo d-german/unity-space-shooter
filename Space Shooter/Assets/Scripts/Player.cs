@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -19,7 +17,7 @@ public class Player : MonoBehaviour
         var verticalInput = Input.GetAxis("Vertical");
 
 
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * _speed * Time.deltaTime);
+        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * (_speed * Time.deltaTime));
 
         if (transform.position.y >= 0)
         {
