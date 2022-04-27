@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CalculateMovement();
+    }
+
+    private void CalculateMovement()
+    {
         var horizontalInput = Input.GetAxis("Horizontal");
         var verticalInput = Input.GetAxis("Vertical");
 
@@ -21,9 +26,9 @@ public class Player : MonoBehaviour
 
         if (transform.position.y >= 0)
         {
-            transform.position = new Vector3(transform.position.x, 0,0);
+            transform.position = new Vector3(transform.position.x, 0, 0);
         }
-        else if(transform.position.y <= -3.8f)
+        else if (transform.position.y <= -3.8f)
         {
             transform.position = new Vector3(transform.position.x, -3.8f, 0);
         }
@@ -32,10 +37,9 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(-11f, transform.position.y, 0);
         }
-        else if (transform.position.x <=- 11f)
+        else if (transform.position.x <= -11f)
         {
             transform.position = new Vector3(11f, transform.position.y, 0);
         }
-
     }
 }
