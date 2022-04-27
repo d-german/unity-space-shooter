@@ -20,5 +20,24 @@ public class Player : MonoBehaviour
 
 
         transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * _speed * Time.deltaTime);
+
+        if (transform.position.y >= 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0,0);
+        }
+        else if(transform.position.y <= -3.8f)
+        {
+            transform.position = new Vector3(transform.position.x, -3.8f, 0);
+        }
+
+        if (transform.position.x >= 11)
+        {
+            transform.position = new Vector3(-11f, transform.position.y, 0);
+        }
+        else if (transform.position.x <=- 11f)
+        {
+            transform.position = new Vector3(11f, transform.position.y, 0);
+        }
+
     }
 }
