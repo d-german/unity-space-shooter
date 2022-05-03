@@ -21,12 +21,16 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+            var gameObj = GameObject.Find("Player");
+            var player = gameObj.GetComponent<Player>();
+            if (player != null) player.Damage();           
+
             Destroy(gameObject);
         }
 
-        if (other.tag == "Lazer")
+        if (other.CompareTag("Laser"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
