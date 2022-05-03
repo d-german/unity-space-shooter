@@ -58,7 +58,6 @@ public class Player : MonoBehaviour
 
     public void Damage()
     {
-        Debug.Log(nameof(Damage));
         _lives--;
 
         if (_lives < 1)
