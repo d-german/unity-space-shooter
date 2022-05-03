@@ -23,9 +23,13 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            var gameObj = GameObject.Find("Player");
-            var player = gameObj.GetComponent<Player>();
-            if (player != null) player.Damage();           
+            var player = GameObject.Find("Player")
+                .GetComponent<Player>();
+
+            if (player != null)
+            {
+                player.Damage();
+            }
 
             Destroy(gameObject);
         }
